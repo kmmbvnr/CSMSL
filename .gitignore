@@ -53,3 +53,7 @@ TestResults/
 !NuGet.exe
 packages/
 *.nupkg
+
+# MonoDevelop #
+*.userprefs
+CSMSL.Tests/test-results/

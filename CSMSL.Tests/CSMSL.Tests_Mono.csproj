@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>12.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F683F3BB-B4D0-4629-A993-26966CD84688}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CSMSL.Tests.Mono</RootNamespace>
+    <AssemblyName>CSMSL.Tests.Mono</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="RangeTestFixture.cs" />
+    <Compile Include="MassToleranceTestFixture.cs" />
+    <Compile Include="Chemistry\ChemicalFormulaGeneratorTestFixture.cs" />
+    <Compile Include="Chemistry\ChemicalFormulaTestFixture.cs" />
+    <Compile Include="Chemistry\MassTestFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proteomics\AminoAcidTestFixture.cs" />
+    <Compile Include="Proteomics\FragmentTestFixture.cs" />
+    <Compile Include="Proteomics\PeptideTestFixture.cs" />
+    <Compile Include="Proteomics\ProteaseTestFixture.cs" />
+    <Compile Include="Spectral\SpectrumTestFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSMSL\CSMSL_Mono.csproj">
+      <Project>{3C8C9F05-9C19-4251-95FA-05D7EDC8CAE6}</Project>
+      <Name>CSMSL_Mono</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chemistry\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Proteomics\" />
+    <Folder Include="Spectral\" />
+  </ItemGroup>
+</Project>
